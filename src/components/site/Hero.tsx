@@ -1,8 +1,8 @@
-import heroImage from "@/assets/image.png";
+import heroImage from "@/assets/hero-clean.png.asset.json";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-24 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <span className="chip mb-6">● BOT Chain News</span>
@@ -20,10 +20,10 @@ export function Hero() {
           </div>
         </div>
         <div className="relative">
-          <div className="absolute inset-0 blur-3xl bg-primary/20 rounded-full" />
-          <img src={heroImage} alt="Ilustração BOT Chain" className="relative w-full rounded-xl border border-border/60" />
+          <img src={heroImage.url} alt="Ilustração BOT Chain" className="relative w-full" />
         </div>
       </div>
     </section>
   );
 }
+
