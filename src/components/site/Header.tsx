@@ -117,6 +117,12 @@ export function Header() {
             setOpen={setOpenEcosystem}
           />
           <DropdownMenu
+            label="Comunidade"
+            items={community}
+            open={openCommunity}
+            setOpen={setOpenCommunity}
+          />
+          <DropdownMenu
             label="Documentação"
             items={docs}
             open={openDocs}
