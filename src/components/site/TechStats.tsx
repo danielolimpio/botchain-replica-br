@@ -22,7 +22,7 @@ const rows = [
 export function TechStats() {
   return (
     <section className="relative py-24 bg-[oklch(0.16_0.012_180)] border-y border-border/50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="chip mb-4">Tecnologia</span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Tecnologia & Mineração Dupla</h2>

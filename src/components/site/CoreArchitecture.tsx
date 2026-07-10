@@ -22,7 +22,7 @@ const items = [
 export function CoreArchitecture() {
   return (
     <section className="relative py-24">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="chip mb-4">Notícias</span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Arquitetura Central BOT</h2>
