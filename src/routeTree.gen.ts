@@ -9,10 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DesenvolvimentoIndexRouteImport } from './routes/desenvolvimento.index'
 import { Route as DesenvolvimentoSlugRouteImport } from './routes/desenvolvimento.$slug'
 
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,36 +49,88 @@ const DesenvolvimentoSlugRoute = DesenvolvimentoSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
   '/desenvolvimento/': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
   '/desenvolvimento': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
   '/desenvolvimento/': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/desenvolvimento/$slug' | '/desenvolvimento/'
+  fullPaths:
+    | '/'
+    | '/politica-de-privacidade'
+    | '/sobre'
+    | '/termos-de-uso'
+    | '/desenvolvimento/$slug'
+    | '/desenvolvimento/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/desenvolvimento/$slug' | '/desenvolvimento'
-  id: '__root__' | '/' | '/desenvolvimento/$slug' | '/desenvolvimento/'
+  to:
+    | '/'
+    | '/politica-de-privacidade'
+    | '/sobre'
+    | '/termos-de-uso'
+    | '/desenvolvimento/$slug'
+    | '/desenvolvimento'
+  id:
+    | '__root__'
+    | '/'
+    | '/politica-de-privacidade'
+    | '/sobre'
+    | '/termos-de-uso'
+    | '/desenvolvimento/$slug'
+    | '/desenvolvimento/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  SobreRoute: typeof SobreRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
   DesenvolvimentoSlugRoute: typeof DesenvolvimentoSlugRoute
   DesenvolvimentoIndexRoute: typeof DesenvolvimentoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +157,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  SobreRoute: SobreRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
   DesenvolvimentoSlugRoute: DesenvolvimentoSlugRoute,
   DesenvolvimentoIndexRoute: DesenvolvimentoIndexRoute,
 }

@@ -27,6 +27,7 @@ const community = [
 ];
 
 const docs = [
+  { label: "Desenvolvimento", href: "/desenvolvimento", disabled: false, internal: true },
   { label: "WhitePaper", href: whitepaperAsset.url, disabled: false },
   { label: "Certik", href: certikAsset.url, disabled: false },
 ];
