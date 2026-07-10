@@ -56,18 +56,20 @@ export function Footer() {
             <ul className="space-y-2 text-xs text-muted-foreground">
               {c.links.map((l) => (
                 <li key={l.label}>
-                {(l as { internal?: boolean }).internal ? (
-                  <a href={l.href} className="hover:text-primary transition">{l.label}</a>
-                ) : (
-                  <a
-                    href={l.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition"
-                  >
-                    {l.label}
-                  </a>
-                )}
+                  {(l as { internal?: boolean }).internal ? (
+                    <a href={l.href} className="hover:text-primary transition">{l.label}</a>
+                  ) : (
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition"
+                    >
+                      {l.label}
+                    </a>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
         ))}
