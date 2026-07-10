@@ -1,19 +1,28 @@
 import logo from "@/assets/icon_title_logo.webp";
 import { Twitter, Github, Send, MessageCircle } from "lucide-react";
 
+const ecosystemLinks = [
+  { label: "B DEX", href: "https://dex.botchain.ai/#/swap" },
+  { label: "BOT Bridge", href: "https://bridge.botchain.ai/" },
+  { label: "BO Wallet", href: "https://wallet.botchain.ai/" },
+  { label: "BOT Scan", href: "https://scan.botchain.ai/" },
+];
+
+const docLinks = [
+  { label: "Sobre nós", href: "#" },
+  { label: "Padrões editoriais", href: "#" },
+  { label: "Fale com a redação", href: "#" },
+];
+
+const legalLinks = [
+  { label: "Política de Privacidade", href: "#" },
+  { label: "Termos de Uso", href: "#" },
+];
+
 const cols = [
-  {
-    title: "Ecossistema",
-    links: ["Notícias", "Análises", "Guias", "Cobertura de Projetos", "Newsletter", "Programa Comunidade"],
-  },
-  {
-    title: "Documentação",
-    links: ["Sobre nós", "Padrões editoriais", "Fale com a redação"],
-  },
-  {
-    title: "Legal",
-    links: ["Política de Privacidade", "Termos de Uso"],
-  },
+  { title: "Ecossistema", links: ecosystemLinks },
+  { title: "Documentação", links: docLinks },
+  { title: "Legal", links: legalLinks },
 ];
 
 export function Footer() {
@@ -37,7 +46,16 @@ export function Footer() {
             <h4 className="text-sm font-semibold mb-3">{c.title}</h4>
             <ul className="space-y-2 text-xs text-muted-foreground">
               {c.links.map((l) => (
-                <li key={l}><a href="#" className="hover:text-primary transition">{l}</a></li>
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition"
+                  >
+                    {l.label}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
