@@ -75,8 +75,7 @@ function DropdownMenu({
                 <a
                   key={d.label}
                   href={d.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(d.internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                   className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/40 transition-colors"
                 >
                   {d.label}
