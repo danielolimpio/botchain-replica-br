@@ -92,6 +92,7 @@ function DropdownMenu({
 export function Header() {
   const [openDocs, setOpenDocs] = useState(false);
   const [openEcosystem, setOpenEcosystem] = useState(false);
+  const [openCommunity, setOpenCommunity] = useState(false);
   return (
     <header className="sticky top-0 z-40 backdrop-blur-lg bg-background/70 border-b border-border/60">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
