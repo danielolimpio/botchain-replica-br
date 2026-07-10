@@ -1,24 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import { CoreArchitecture } from "@/components/site/CoreArchitecture";
+import { TechStats } from "@/components/site/TechStats";
+import { Portals } from "@/components/site/Portals";
+import { Projects } from "@/components/site/Projects";
+import { Security } from "@/components/site/Security";
+import { Roadmap } from "@/components/site/Roadmap";
+import { MediaKit } from "@/components/site/MediaKit";
+import { Footer } from "@/components/site/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "BOT Chain News — Inteligência Reinventada" },
+      { name: "description", content: "Portal informacional em português sobre a BOT Chain: notícias, análises, guias e cobertura de todo o ecossistema." },
+      { property: "og:title", content: "BOT Chain News — Inteligência Reinventada" },
+      { property: "og:description", content: "Notícias e análises sobre a BOT Chain e seu ecossistema." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <Hero />
+        <CoreArchitecture />
+        <TechStats />
+        <Portals />
+        <Projects />
+        <Security />
+        <Roadmap />
+        <MediaKit />
+      </main>
+      <Footer />
     </div>
   );
 }
