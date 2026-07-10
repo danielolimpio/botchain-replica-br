@@ -3,6 +3,7 @@ import { Github, Search, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/icon_title_logo.webp";
 import certikAsset from "@/assets/Certik.pdf.asset.json";
+import whitepaperAsset from "@/assets/Whitepaper.pdf.asset.json";
 
 const nav = [
   { label: "Notícias", href: "/noticias" },
