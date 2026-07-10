@@ -1,4 +1,4 @@
-import token from "@/assets/icon_bot_token.webp";
+import coreAsset from "@/assets/botchain-core.png.asset.json";
 
 const items = [
   {
@@ -36,10 +36,15 @@ export function CoreArchitecture() {
             </article>
           ))}
           <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none">
-            <img src={token} alt="" className="w-28 h-28 drop-shadow-[0_0_40px_oklch(0.78_0.15_168/0.6)]" />
+            <img
+              src={coreAsset.url}
+              alt="Representação 3D do núcleo da BOT Chain"
+              className="w-36 h-36 object-contain drop-shadow-[0_0_50px_oklch(0.78_0.15_168/0.5)]"
+            />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
