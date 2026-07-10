@@ -39,7 +39,7 @@ function DropdownMenu({
   setOpen,
 }: {
   label: string;
-  items: { label: string; href: string; disabled?: boolean }[];
+  items: { label: string; href: string; disabled?: boolean; internal?: boolean }[];
   open: boolean;
   setOpen: (v: boolean) => void;
 }) {
