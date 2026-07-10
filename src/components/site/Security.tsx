@@ -4,7 +4,7 @@ import platform from "@/assets/icon_platform.webp";
 export function Security() {
   return (
     <section className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="chip mb-4">Editorial</span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Segurança & Empoderamento</h2>

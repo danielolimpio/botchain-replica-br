@@ -38,7 +38,7 @@ const stages = [
 export function Roadmap() {
   return (
     <section className="py-24 border-y border-border/50 bg-[oklch(0.16_0.012_180)]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="chip mb-4">Editorial</span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Agenda Editorial BOT Chain</h2>
