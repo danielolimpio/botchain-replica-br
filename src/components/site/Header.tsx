@@ -13,7 +13,7 @@ const nav = [
 ];
 
 const docs = [
-  { label: "WhitePaper", href: "#", disabled: true },
+  { label: "WhitePaper", href: whitepaperAsset.url, disabled: false },
   { label: "Certik", href: certikAsset.url, disabled: false },
 ];
 
