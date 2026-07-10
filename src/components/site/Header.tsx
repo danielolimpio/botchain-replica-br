@@ -9,7 +9,6 @@ const nav = [
   { label: "Notícias", href: "/noticias" },
   { label: "Análises", href: "/analises" },
   { label: "Guias", href: "/guias" },
-  { label: "Comunidade", href: "/comunidade" },
 ];
 
 const ecosystem = [
@@ -17,6 +16,14 @@ const ecosystem = [
   { label: "BOT Bridge", href: "https://bridge.botchain.ai/" },
   { label: "BO Wallet", href: "https://wallet.botchain.ai/" },
   { label: "BOT Scan", href: "https://scan.botchain.ai/" },
+];
+
+const community = [
+  { label: "X", href: "https://x.com/BOTChain_ai" },
+  { label: "Telegram", href: "https://t.me/BOTChainNetwork" },
+  { label: "YouTube", href: "https://www.youtube.com/@BOTChain_ai" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/botchain-official/" },
+  { label: "Instagram", href: "https://www.instagram.com/bot_chain/" },
 ];
 
 const docs = [
