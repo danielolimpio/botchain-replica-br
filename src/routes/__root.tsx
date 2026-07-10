@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "BOT Chain News — Inteligência Reinventada" },
+      { name: "description", content: "Portal informacional em português sobre a BOT Chain: notícias, análises, guias e cobertura de todo o ecossistema." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "BOT Chain News — Inteligência Reinventada" },
+      { property: "og:description", content: "Portal informacional em português sobre a BOT Chain: notícias, análises, guias e cobertura de todo o ecossistema." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "BOT Chain News — Inteligência Reinventada" },
+      { name: "twitter:description", content: "Portal informacional em português sobre a BOT Chain: notícias, análises, guias e cobertura de todo o ecossistema." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/677085a1-0f34-49c2-b21b-26af90b4a8f6/id-preview-3797efa8--1507fd28-b22f-41f7-be38-43265cd2e32c.lovable.app-1783701835364.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/677085a1-0f34-49c2-b21b-26af90b4a8f6/id-preview-3797efa8--1507fd28-b22f-41f7-be38-43265cd2e32c.lovable.app-1783701835364.png" },
     ],
     links: [
       {

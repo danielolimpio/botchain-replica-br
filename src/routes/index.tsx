@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       { title: "BOT Chain News — Inteligência Reinventada" },
       { name: "description", content: "Portal informacional em português sobre a BOT Chain: notícias, análises, guias e cobertura de todo o ecossistema." },
       { property: "og:title", content: "BOT Chain News — Inteligência Reinventada" },
-      { property: "og:description", content: "Notícias e análises sobre a BOT Chain e seu ecossistema." },
+      { property: "og:description", content: "Portal informacional em português sobre a BOT Chain: notícias, análises, guias e cobertura de todo o ecossistema." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
