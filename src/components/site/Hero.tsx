@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-original.png.asset.json";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-hero-bg">
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-24 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 pt-20 pb-24 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <span className="chip mb-6">● BOT Chain News</span>
           <h1 className="text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">
