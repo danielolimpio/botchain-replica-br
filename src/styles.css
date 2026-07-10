@@ -59,7 +59,9 @@
   --border: oklch(0.28 0.02 180 / 60%);
   --input: oklch(0.25 0.02 180);
   --ring: oklch(0.78 0.15 168);
+  --hero-bg: #000000;
 }
+
 
 .dark {
   --background: oklch(0.14 0.01 180);
