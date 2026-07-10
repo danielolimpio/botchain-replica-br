@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DesenvolvimentoIndexRouteImport } from './routes/desenvolvimento.index'
+import { Route as DesenvolvimentoSlugRouteImport } from './routes/desenvolvimento.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DesenvolvimentoIndexRoute = DesenvolvimentoIndexRouteImport.update({
+  id: '/desenvolvimento/',
+  path: '/desenvolvimento/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesenvolvimentoSlugRoute = DesenvolvimentoSlugRouteImport.update({
+  id: '/desenvolvimento/$slug',
+  path: '/desenvolvimento/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
+  '/desenvolvimento/': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
+  '/desenvolvimento': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
+  '/desenvolvimento/': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/desenvolvimento/$slug' | '/desenvolvimento/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/desenvolvimento/$slug' | '/desenvolvimento'
+  id: '__root__' | '/' | '/desenvolvimento/$slug' | '/desenvolvimento/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DesenvolvimentoSlugRoute: typeof DesenvolvimentoSlugRoute
+  DesenvolvimentoIndexRoute: typeof DesenvolvimentoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/desenvolvimento/': {
+      id: '/desenvolvimento/'
+      path: '/desenvolvimento'
+      fullPath: '/desenvolvimento/'
+      preLoaderRoute: typeof DesenvolvimentoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desenvolvimento/$slug': {
+      id: '/desenvolvimento/$slug'
+      path: '/desenvolvimento/$slug'
+      fullPath: '/desenvolvimento/$slug'
+      preLoaderRoute: typeof DesenvolvimentoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DesenvolvimentoSlugRoute: DesenvolvimentoSlugRoute,
+  DesenvolvimentoIndexRoute: DesenvolvimentoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
