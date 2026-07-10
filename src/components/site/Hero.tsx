@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-clean.png.asset.json";
+import heroImage from "@/assets/hero-original.png.asset.json";
 
 export function Hero() {
   return (
