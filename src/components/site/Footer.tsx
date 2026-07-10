@@ -8,6 +8,14 @@ const ecosystemLinks = [
   { label: "BOT Scan", href: "https://scan.botchain.ai/" },
 ];
 
+const communityLinks = [
+  { label: "X", href: "https://x.com/BOTChain_ai" },
+  { label: "Telegram", href: "https://t.me/BOTChainNetwork" },
+  { label: "YouTube", href: "https://www.youtube.com/@BOTChain_ai" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/botchain-official/" },
+  { label: "Instagram", href: "https://www.instagram.com/bot_chain/" },
+];
+
 const docLinks = [
   { label: "Sobre nós", href: "#" },
   { label: "Padrões editoriais", href: "#" },
@@ -21,6 +29,7 @@ const legalLinks = [
 
 const cols = [
   { title: "Ecossistema", links: ecosystemLinks },
+  { title: "Comunidade", links: communityLinks },
   { title: "Documentação", links: docLinks },
   { title: "Legal", links: legalLinks },
 ];
