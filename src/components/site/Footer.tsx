@@ -17,14 +17,14 @@ const communityLinks = [
 ];
 
 const docLinks = [
-  { label: "Sobre nós", href: "#" },
-  { label: "Padrões editoriais", href: "#" },
-  { label: "Fale com a redação", href: "#" },
+  { label: "Desenvolvimento", href: "/desenvolvimento", internal: true },
+  { label: "Sobre nós", href: "/sobre", internal: true },
+  { label: "Fale com a redação", href: "/sobre", internal: true },
 ];
 
 const legalLinks = [
-  { label: "Política de Privacidade", href: "#" },
-  { label: "Termos de Uso", href: "#" },
+  { label: "Política de Privacidade", href: "/politica-de-privacidade", internal: true },
+  { label: "Termos de Uso", href: "/termos-de-uso", internal: true },
 ];
 
 const cols = [
@@ -56,14 +56,18 @@ export function Footer() {
             <ul className="space-y-2 text-xs text-muted-foreground">
               {c.links.map((l) => (
                 <li key={l.label}>
-                  <a
-                    href={l.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition"
-                  >
-                    {l.label}
-                  </a>
+                  {(l as { internal?: boolean }).internal ? (
+                    <a href={l.href} className="hover:text-primary transition">{l.label}</a>
+                  ) : (
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition"
+                    >
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

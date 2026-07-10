@@ -27,6 +27,7 @@ const community = [
 ];
 
 const docs = [
+  { label: "Desenvolvimento", href: "/desenvolvimento", disabled: false, internal: true },
   { label: "WhitePaper", href: whitepaperAsset.url, disabled: false },
   { label: "Certik", href: certikAsset.url, disabled: false },
 ];
@@ -38,7 +39,7 @@ function DropdownMenu({
   setOpen,
 }: {
   label: string;
-  items: { label: string; href: string; disabled?: boolean }[];
+  items: { label: string; href: string; disabled?: boolean; internal?: boolean }[];
   open: boolean;
   setOpen: (v: boolean) => void;
 }) {
@@ -74,8 +75,7 @@ function DropdownMenu({
                 <a
                   key={d.label}
                   href={d.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(d.internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                   className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/40 transition-colors"
                 >
                   {d.label}

@@ -9,38 +9,128 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DesenvolvimentoIndexRouteImport } from './routes/desenvolvimento.index'
+import { Route as DesenvolvimentoSlugRouteImport } from './routes/desenvolvimento.$slug'
 
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DesenvolvimentoIndexRoute = DesenvolvimentoIndexRouteImport.update({
+  id: '/desenvolvimento/',
+  path: '/desenvolvimento/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesenvolvimentoSlugRoute = DesenvolvimentoSlugRouteImport.update({
+  id: '/desenvolvimento/$slug',
+  path: '/desenvolvimento/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
+  '/desenvolvimento/': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
+  '/desenvolvimento': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/desenvolvimento/$slug': typeof DesenvolvimentoSlugRoute
+  '/desenvolvimento/': typeof DesenvolvimentoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/politica-de-privacidade'
+    | '/sobre'
+    | '/termos-de-uso'
+    | '/desenvolvimento/$slug'
+    | '/desenvolvimento/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/politica-de-privacidade'
+    | '/sobre'
+    | '/termos-de-uso'
+    | '/desenvolvimento/$slug'
+    | '/desenvolvimento'
+  id:
+    | '__root__'
+    | '/'
+    | '/politica-de-privacidade'
+    | '/sobre'
+    | '/termos-de-uso'
+    | '/desenvolvimento/$slug'
+    | '/desenvolvimento/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  SobreRoute: typeof SobreRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
+  DesenvolvimentoSlugRoute: typeof DesenvolvimentoSlugRoute
+  DesenvolvimentoIndexRoute: typeof DesenvolvimentoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +138,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/desenvolvimento/': {
+      id: '/desenvolvimento/'
+      path: '/desenvolvimento'
+      fullPath: '/desenvolvimento/'
+      preLoaderRoute: typeof DesenvolvimentoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desenvolvimento/$slug': {
+      id: '/desenvolvimento/$slug'
+      path: '/desenvolvimento/$slug'
+      fullPath: '/desenvolvimento/$slug'
+      preLoaderRoute: typeof DesenvolvimentoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  SobreRoute: SobreRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
+  DesenvolvimentoSlugRoute: DesenvolvimentoSlugRoute,
+  DesenvolvimentoIndexRoute: DesenvolvimentoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
