@@ -8,6 +8,14 @@ const ecosystemLinks = [
   { label: "BOT Scan", href: "https://scan.botchain.ai/" },
 ];
 
+const communityLinks = [
+  { label: "X", href: "https://x.com/BOTChain_ai" },
+  { label: "Telegram", href: "https://t.me/BOTChainNetwork" },
+  { label: "YouTube", href: "https://www.youtube.com/@BOTChain_ai" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/botchain-official/" },
+  { label: "Instagram", href: "https://www.instagram.com/bot_chain/" },
+];
+
 const docLinks = [
   { label: "Sobre nós", href: "#" },
   { label: "Padrões editoriais", href: "#" },
@@ -21,6 +29,7 @@ const legalLinks = [
 
 const cols = [
   { title: "Ecossistema", links: ecosystemLinks },
+  { title: "Comunidade", links: communityLinks },
   { title: "Documentação", links: docLinks },
   { title: "Legal", links: legalLinks },
 ];
@@ -28,7 +37,7 @@ const cols = [
 export function Footer() {
   return (
     <footer className="border-t border-border/60 py-14">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-10">
         <div>
           <img src={logo} alt="BOT Chain News" className="h-6 mb-4" />
           <p className="text-xs text-muted-foreground mb-4">

@@ -9,7 +9,6 @@ const nav = [
   { label: "Notícias", href: "/noticias" },
   { label: "Análises", href: "/analises" },
   { label: "Guias", href: "/guias" },
-  { label: "Comunidade", href: "/comunidade" },
 ];
 
 const ecosystem = [
@@ -17,6 +16,14 @@ const ecosystem = [
   { label: "BOT Bridge", href: "https://bridge.botchain.ai/" },
   { label: "BO Wallet", href: "https://wallet.botchain.ai/" },
   { label: "BOT Scan", href: "https://scan.botchain.ai/" },
+];
+
+const community = [
+  { label: "X", href: "https://x.com/BOTChain_ai" },
+  { label: "Telegram", href: "https://t.me/BOTChainNetwork" },
+  { label: "YouTube", href: "https://www.youtube.com/@BOTChain_ai" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/botchain-official/" },
+  { label: "Instagram", href: "https://www.instagram.com/bot_chain/" },
 ];
 
 const docs = [
@@ -85,6 +92,7 @@ function DropdownMenu({
 export function Header() {
   const [openDocs, setOpenDocs] = useState(false);
   const [openEcosystem, setOpenEcosystem] = useState(false);
+  const [openCommunity, setOpenCommunity] = useState(false);
   return (
     <header className="sticky top-0 z-40 backdrop-blur-lg bg-background/70 border-b border-border/60">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -107,6 +115,12 @@ export function Header() {
             items={ecosystem}
             open={openEcosystem}
             setOpen={setOpenEcosystem}
+          />
+          <DropdownMenu
+            label="Comunidade"
+            items={community}
+            open={openCommunity}
+            setOpen={setOpenCommunity}
           />
           <DropdownMenu
             label="Documentação"
