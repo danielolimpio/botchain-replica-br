@@ -8,7 +8,7 @@ import whitepaperAsset from "@/assets/Whitepaper.pdf.asset.json";
 const nav = [
   { label: "Notícias", href: "/noticias" },
   { label: "Análises", href: "/analises" },
-  { label: "Guias", href: "/guias" },
+  { label: "News", href: "/news" },
 ];
 
 const ecosystem = [
