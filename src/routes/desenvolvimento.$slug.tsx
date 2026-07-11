@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { DocsLayout } from "@/components/site/DocsLayout";
 import { devDocsSidebar } from "@/data/devDocsSidebar";
-import devDocs from "@/data/devDocs.json";
+import devDocs from "@/data/devDocsPt.json";
 
 type DocEntry = { title: string; html: string };
 const docs = devDocs as Record<string, DocEntry>;
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/desenvolvimento/$slug")({
 });
 
 function cleanTitle(t: string) {
-  return t.replace(/\|\s*BOT Chain Dev Docs$/, "").replace(/\|\s*BOT Chain Documentation$/, "").trim();
+  return t.replace(/\|\s*BOT Chain Dev Docs$/, "").replace(/\|\s*BOT Chain Documentation$/, "").replace(/\|\s*Documentação Dev BOT Chain$/, "").replace(/\|\s*Documentação da BOT Chain$/, "").trim();
 }
 
 function DocPage() {
