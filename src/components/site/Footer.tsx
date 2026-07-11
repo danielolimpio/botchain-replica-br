@@ -16,6 +16,12 @@ const communityLinks = [
   { label: "Instagram", href: "https://www.instagram.com/bot_chain/" },
 ];
 
+const contentLinks = [
+  { label: "Notícias", href: "/noticias", internal: true },
+  { label: "Análises", href: "/analises", internal: true },
+  { label: "News", href: "/news", internal: true },
+];
+
 const docLinks = [
   { label: "Desenvolvimento", href: "/desenvolvimento", internal: true },
   { label: "Sobre nós", href: "/sobre", internal: true },
@@ -28,6 +34,7 @@ const legalLinks = [
 ];
 
 const cols = [
+  { title: "Conteúdo", links: contentLinks },
   { title: "Ecossistema", links: ecosystemLinks },
   { title: "Comunidade", links: communityLinks },
   { title: "Documentação", links: docLinks },
